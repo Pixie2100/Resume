@@ -1,134 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">     
     <title>Online Resume</title>
 
     <style>
-       {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-     
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: Arial, sans-serif;
+        font-family: 'Arial', sans-serif;
         background-color: #f5f5f5;
+        overflow-y: auto; /* Ensure scrollability */
       }
 
-      
       .resume-container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        width: 100%;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        margin: 30px auto;
+        position: relative;
       }
 
-     
-      .center-content {
+      .header {
         text-align: center;
+        padding: 20px;
       }
 
-     
-      img.profile {
-        border-radius: 50%;
-        margin-bottom: 15px;
-      }
-
-      
-      .left-section {
-        text-align: left;
-        margin-top: 20px;
-      }
-
-      
-      .objectives p {
-        line-height: 1.5;
-      }
-
-     
-      h2 {
-        font-size: 1.5em;
-        color: #333;
+      h1 {
+        color: #336699; /* Name color */
+        font-size: 2.5em; /* Larger name font */
         margin-bottom: 10px;
+        position: relative;
+        z-index: 1; /* Bring to front */
       }
 
-      
+      .profile {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 15px;
+        border: 4px solid #336699; /* Border around profile */
+        position: relative;
+        z-index: 1; /* Bring to front */
+      }
+
+      .contact-info {
+        margin: 10px 0;
+        font-size: 1.1em;
+        color: #336699; /* Blue contact info */
+        position: relative;
+        z-index: 1; /* Bring to front */
+      }
+
       hr {
         border: none;
-        border-top: 2px solid #ddd;
+        border-top: 1px solid #ddd;
         margin: 20px 0;
       }
 
-      
-      ul {
-        list-style-type: none;
-        padding-left: 0;
+      .section {
+        margin: 20px 0;
+        position: relative;
+        border-radius: 10px;
+        padding: 20px;
+        color: #336699; 
+        overflow: hidden; 
       }
 
-      ul li {
-        margin-bottom: 8px;
+      .objectives {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      }
+
+      .education {
+        background: linear-gradient(135deg, #fbc2eb, #a6c1ee); 
+      }
+
+      .employment {
+        background: linear-gradient(135deg, #ffecd2, #fcb69f); 
+      }
+
+      .skills {
+        background: linear-gradient(135deg, #d9a7c7, #fffcdc); 
+      }
+
+      .references {
+        background: linear-gradient(135deg, #fbc2eb, #ff9a9e); 
+      }
+
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1; /* Bring to front */
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 4px;
+        background-color: #336699; 
+        margin-top: 5px;
+      }
+
+      .objectives p, .section p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1; 
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .skill {
+        background-color: rgba(255, 255, 255, 0.9); 
+        color: #336699; 
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px;
+        flex: 1 1 45%; 
+        position: relative;
+        z-index: 1; 
+      }
+
+      .references {
+        margin-top: 20px;
+      }
+
+      .references h4, .references p {
+        margin-top: 10px;
+        color: #336699; 
+        position: relative;
+        z-index: 1; 
+      }
+
+      
+      .triangle {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+      }
+
+      .triangle.bottom {
+        border-top: 20px solid rgba(255, 255, 255, 0.4); 
+        left: 20px;
+        bottom: -20px;
+      }
+
+     
+      .wavy-line {
+        position: absolute;
+        bottom: -15px; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><path d="M0 30 C 50 0, 50 60, 100 30 S 200 0, 300 30 S 400 60, 500 30 S 600 0, 700 30 L 700 100 L 0 100 Z" fill="rgba(255, 255, 255, 0.3)" /></svg>') no-repeat center;
+        z-index: 0; 
+      }
+
+     
+      @media (max-width: 600px) {
+        .resume-container {
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        .profile {
+          width: 120px;
+          height: 120px;
+        }
       }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     
     <div class="resume-container">
-      
-      <div class="center-content">
+      <div class="header">
         <h1>Angelica Evangelista</h1>
-        <img src="resume.png" alt="Profile Picture" width="150" height="150" class="profile">
-
-        <p>
-          <img src="icons8-email-50.png" alt="Email Icon" width="20" height="20">
-          202110434@btech.ph.education
-        </p>
-        <p>
-          <img src="icons8-phone-50.png" alt="Phone Icon" width="20" height="20">
-          09765098401
-        </p>
+        <img src="resume.png" alt="Profile Picture" class="profile">
+        <div class="contact-info">
+          <p>
+            <img src="icons8-email-50.png" alt="Email Icon" width="20" height="20"> 
+            202110434@btech.ph.education
+          </p>
+          <p>
+            <img src="icons8-phone-50.png" alt="Phone Icon" width="20" height="20"> 
+            09765098401
+          </p>
+        </div>
       </div>
-
+      
       <hr>
 
-     
-      <div class="left-section objectives">
+      <div class="section objectives">
         <h2>Objectives</h2>
-        <p>Motivated IT student seeking an entry-level position to leverage my 
-		foundational knowledge of computer systems and software applications.<br>Eager to learn and contribute to a dynamic team while developing practical skills in the field.</p>
+        <p>Motivated IT student seeking an entry-level position to leverage my foundational knowledge of computer systems and software applications. Eager to learn and contribute to a dynamic team while developing practical skills in the field.</p>
+        <div class="wavy-line"></div>
       </div>
 
-     
-      <div class="left-section">
+      <div class="section education">
         <h2>Education</h2>
         <p>Bachelor of Science in Information Technology</p>
+        <div class="wavy-line"></div>
       </div>
 
-    
-      <div class="left-section">
-        <h2>Experience</h2>
-        <p>Former Product Researcher on Amazon</p>
+      <div class="section employment">
+        <h2>Employment History</h2>
+        <p>Former Product Researcher on Amazon (2021)</p>
+        <h4 style="z-index: 1; position: relative;">Company: EMPIRE E-Commerce</h4> 
+        <div class="wavy-line" style="bottom: -15px;"></div> 
       </div>
 
-
-      <div class="left-section">
+      <div class="section skills">
         <h2>Skills</h2>
-        <ul>
-          <li>Multi-tasker</li>
-          <li>Problem Solver</li>
-          <li>Illustrator</li>
-          <li>Positive Thinker</li>
-        </ul>
+        <div class="skill">Multi-tasker</div>
+        <div class="skill">Problem Solver</div>
+        <div class="skill">Illustrator</div>
+        <div class="skill">Positive Thinker</div>
+        <div class="wavy-line"></div>
+      </div>
+
+      <div class="section references">
+        <h2>References</h2>
+        <h4>Mirasol Evangelista</h4>
+        <p>Phone: 09350938401</p>
+        <h4>Elsa Cordova</h4>
+        <p>Phone: 09976379155</p>
+        <div class="wavy-line"></div>
       </div>
     </div>
-  </body>
+</body>
 </html>
