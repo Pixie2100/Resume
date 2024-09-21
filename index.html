@@ -4,23 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">     
     <title>Online Resume</title>
+
     <style>
-      img {
-        float: left;
-        margin: 1px;
+       {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+     
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      
+      .resume-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+      }
+
+     
+      .center-content {
+        text-align: center;
+      }
+
+     
+      img.profile {
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
+
+      
+      .left-section {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      
+      .objectives p {
+        line-height: 1.5;
+      }
+
+     
+      h2 {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      
+      hr {
+        border: none;
+        border-top: 2px solid #ddd;
+        margin: 20px 0;
+      }
+
+      
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      ul li {
+        margin-bottom: 8px;
       }
     </style>
-    <body>
-      <h1>Angelica Evangelista</h1>
-      <img src="resume.png" alt="image" width="150" height="150">
-      <p><img src="icons8-email-50.png" alt="Email Icon" width="20" height="20"> 202110434@btech.ph.education</p>
-      <p>Phone: 09765098401</p>
-      <h2>Education:</h2>
-      <p>Bachelor of Science in Information Technology</p>
-      <h2>Experience</h2>
-      <p>Former Product Researcher on Amazon</p>
-      <h2>Skills</h2>
-      <p>Multi-tasking, Illustrating, Graphic Designing, Problem Solver,</p>
-      
-    </body>
   </head>
+
+  <body>
+    
+    <div class="resume-container">
+      
+      <div class="center-content">
+        <h1>Angelica Evangelista</h1>
+        <img src="resume.png" alt="Profile Picture" width="150" height="150" class="profile">
+
+        <p>
+          <img src="icons8-email-50.png" alt="Email Icon" width="20" height="20">
+          202110434@btech.ph.education
+        </p>
+        <p>
+          <img src="icons8-phone-50.png" alt="Phone Icon" width="20" height="20">
+          09765098401
+        </p>
+      </div>
+
+      <hr>
+
+     
+      <div class="left-section objectives">
+        <h2>Objectives</h2>
+        <p>Motivated IT student seeking an entry-level position to leverage my 
+		foundational knowledge of computer systems and software applications.<br>Eager to learn and contribute to a dynamic team while developing practical skills in the field.</p>
+      </div>
+
+     
+      <div class="left-section">
+        <h2>Education</h2>
+        <p>Bachelor of Science in Information Technology</p>
+      </div>
+
+    
+      <div class="left-section">
+        <h2>Experience</h2>
+        <p>Former Product Researcher on Amazon</p>
+      </div>
+
+
+      <div class="left-section">
+        <h2>Skills</h2>
+        <ul>
+          <li>Multi-tasker</li>
+          <li>Problem Solver</li>
+          <li>Illustrator</li>
+          <li>Positive Thinker</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
